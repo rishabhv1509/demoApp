@@ -1,7 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:hello/login.dart';
 import 'package:hello/newRequest.dart';
+import 'package:hello/screens/homepage.dart';
+import 'package:hello/screens/notifications.dart';
+import 'package:hello/screens/orders.dart';
+import 'package:hello/screens/settings.dart';
+import 'package:hello/screens/wallet.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,9 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: new ThemeData(primarySwatch: Colors.amber),
-      home: new Login(),
+      home: new HomePage(),
       routes: <String, WidgetBuilder>{
-        "/a": (BuildContext context) => new NewRequests("New Requests")
+        "/orders": (BuildContext context) => Orders(),
+        "/settings": (BuildContext context) => Settings(),
+        "/notifications": (BuildContext context) => Notifications(),
+        "/mywallet": (BuildContext context) => MyWallet(),
       },
     );
   }
